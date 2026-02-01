@@ -1,4 +1,4 @@
-# My-Turning-Complete-Save
+# My-Turing-Complete-Save
 我的图灵完备全通关存档，存档的图灵完备版本为0.1059 Beta
 <img width="1052" height="592" alt="image" src="https://github.com/user-attachments/assets/0f59d4cd-41db-4861-8ee6-f953f91014f3" />
 <img width="1052" height="592" alt="image" src="https://github.com/user-attachments/assets/ed032209-3212-4327-9bfa-e6e798b1f59e" />
