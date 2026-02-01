@@ -4,7 +4,7 @@
 <img width="1052" height="592" alt="image" src="https://github.com/user-attachments/assets/ed032209-3212-4327-9bfa-e6e798b1f59e" />
 <img width="1052" height="592" alt="image" src="https://github.com/user-attachments/assets/45f0553f-69ba-4b57-a4da-6f59f9c8a3c1" />
 # 使用方法
-把Turning Complete.zip解压缩到C:\Users\37648\AppData\Roaming\godot\app_userdata\里即可
+把Turing Complete.zip解压缩到C:\Users\37648\AppData\Roaming\godot\app_userdata\里即可
 
 我之前很早就玩过图灵完备，但当时只玩到汇编关卡后就没玩了，没有通关
 过了很久后，也就是差不多2026年初，我开始重新玩图灵完备，并准备将其通关，
