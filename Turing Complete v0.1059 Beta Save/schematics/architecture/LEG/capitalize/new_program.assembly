@@ -1,0 +1,21 @@
+add|imm1|imm2 1 0 0
+
+add|imm2 in 0 1
+
+je|imm2 0 1 if0_true
+je 0 0 if0_false
+
+label if0_true
+sub|imm2 1 32 out
+add|imm1|imm2 0 0 0
+je 0 0 4
+
+label if0_false
+je|imm2 1 32 if1_true
+je 0 0 if1_false
+
+label if1_true
+add|imm1|imm2 1 0 0
+label if1_false
+add|imm2 1 0 out
+je 0 0 4

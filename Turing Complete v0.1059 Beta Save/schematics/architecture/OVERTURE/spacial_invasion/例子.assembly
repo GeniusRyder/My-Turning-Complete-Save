@@ -1,0 +1,26 @@
+5
+cp|out
+1
+cp|out
+cp|out
+cp|out
+cp|out
+cp|out
+
+label if
+cp|in|1
+33
+cp|2
+sub
+attack
+is_eq0
+3
+cp|out
+if
+jmp
+
+label attack
+5
+cp|out
+if
+jmp

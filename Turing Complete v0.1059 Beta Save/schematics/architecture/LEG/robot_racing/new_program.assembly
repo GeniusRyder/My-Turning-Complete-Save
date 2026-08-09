@@ -1,0 +1,57 @@
+add|imm1|imm2 3 0 8
+add|imm1|imm2 3 0 9
+add|imm1|imm2 1 0 10
+call _ _ Hilbert
+
+label Pause
+je 0 0 Pause
+
+label Hilbert
+	# r8 = order
+	# r9 = d
+	# r10 = rot
+	je|imm2 8 0 Return
+	
+	push 8 _ _
+	push 9 _ _
+	push 10 _ _
+	sub|imm2 8 1 8
+	add 9 10 9
+	neg 10 _ 10
+	call _ _ Hilbert
+	pop _ _ 10
+	pop _ _ 9
+	pop _ _ 8
+	mod|imm2 9 4 11
+	add|imm2 11 0 out
+	
+	push 8 _ _
+	sub|imm2 8 1 8
+	call _ _ Hilbert
+	pop _ _ 8
+	add 9 10 11
+	mod|imm2 11 4 11
+	add|imm2 11 0 out
+	
+	push 8 _ _
+	sub|imm2 8 1 8
+	call _ _ Hilbert
+	pop _ _ 8
+	mul|imm1 2 10 11
+	add 9 11 11
+	mod|imm2 11 4 11
+	add|imm2 11 0 out
+	
+	push 8 _ _
+	push 9 _ _
+	push 10 _ _
+	sub|imm2 8 1 8
+	sub 9 10 9
+	neg 10 _ 10
+	call _ _ Hilbert
+	pop _ _ 10
+	pop _ _ 9
+	pop _ _ 8
+
+label Return
+	ret _ _ _

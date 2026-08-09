@@ -1,0 +1,11 @@
+add|imm1|imm2 0 0 0
+
+str 0 7 _
+add|imm2 0 1 0
+jb|imm2 0 32 4
+
+add|imm1|imm2 0 0 0
+
+ldr 0 _ 7
+add|imm2 0 1 0
+jb|imm2 0 32 20

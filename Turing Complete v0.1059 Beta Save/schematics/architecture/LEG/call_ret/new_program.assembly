@@ -1,0 +1,44 @@
+add|imm1|imm2 4 0 0
+call _ _ Factorial
+call _ _ Calc
+je 0 0 12
+
+label Calc
+	# R0 = parameter
+	# R1 = return value
+	push 0 _ _
+	add|imm2 0 1 0
+	call _ _ A
+	pop _ _ 0
+	ret _ _ _
+
+label A
+	# R0 = parameter
+	# R1 = return value
+	push 0 _ _
+	mul|imm2 0 2 1
+	add|imm2 1 0 0
+	call _ _ B
+	pop _ _ 0
+	ret _ _ _
+
+label B
+	# R0 = parameter
+	# R1 = return value
+	sub|imm2 0 1 1
+	ret _ _ _
+
+label Factorial
+	# R0 = parameter
+	# R1 = return value
+	je|imm2 0 1 Return
+	push 0 _ _
+	sub|imm2 0 1 0
+	call _ _ Factorial
+	pop _ _ 1
+	mul 0 1 0
+	ret _ _ _
+
+label Return
+	ret _ _ _
+	

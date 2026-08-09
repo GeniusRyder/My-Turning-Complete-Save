@@ -1,0 +1,53 @@
+add|imm2 in 0 8
+add|imm2 in 0 9
+add|imm2 in 0 10
+add|imm2 in 0 11
+call _ _ move
+
+label pause
+je 0 0 pause
+
+label move
+	# r8 = disk_nr
+	# r9 = source
+	# r10 = destination
+	# r11 = spare
+	je|imm2 8 0 if
+	je 0 0 else
+	label if
+		add|imm2 9 0 out
+		add|imm1|imm2 5 0 out
+		add|imm2 10 0 out
+		add|imm1|imm2 5 0 out
+		je 0 0 if_end
+	label else
+		push 8 _ _
+		push 10 _ _
+		push 11 _ _
+		sub|imm2 8 1 8
+		add|imm2 10 0 12
+		add|imm2 11 0 10
+		add|imm2 12 0 11
+		call _ _ move
+		pop _ _ 11
+		pop _ _ 10
+		pop _ _ 8
+		
+		add|imm2 9 0 out
+		add|imm1|imm2 5 0 out
+		add|imm2 10 0 out
+		add|imm1|imm2 5 0 out
+		
+		push 8 _ _
+		push 9 _ _
+		push 11 _ _
+		sub|imm2 8 1 8
+		add|imm2 9 0 12
+		add|imm2 11 0 9
+		add|imm2 12 0 11
+		call _ _ move
+		pop _ _ 11
+		pop _ _ 9
+		pop _ _ 8
+	label if_end
+	ret _ _ _

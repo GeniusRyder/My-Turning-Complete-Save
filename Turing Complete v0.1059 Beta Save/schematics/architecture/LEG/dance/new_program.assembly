@@ -1,0 +1,21 @@
+# reg0 = seed
+add|imm2 in 0 0
+# reg1 = seed shr 1
+shr|imm2 0 1 1
+# reg2 = temp1
+xor 0 1 2
+# reg3 = temp1 shl 1
+shl|imm2 2 1 3
+# reg4 = temp2
+xor 2 3 4
+# reg5 = temp2 shr 2
+shr|imm2 4 2 5
+# reg8 = next_seed
+xor 4 5 8
+# out = next_seed mod 4
+mod|imm2 8 4 out
+
+# reg0 = next_seed
+add|imm2 8 0 0
+# jmp 4
+je 0 0 4

@@ -1,0 +1,20 @@
+1
+cp|out
+0
+cp|out
+label if
+cp|in|1
+1
+cp|2
+sub
+right
+is_eq0
+4
+cp|out
+0
+jmp
+label right
+2
+cp|out
+if
+jmp

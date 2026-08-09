@@ -1,0 +1,11 @@
+add|imm2 in 0 0
+add|imm2 in 0 1
+
+jae 0 1 16
+je|imm1|imm2 0 0 28
+sub 0 1 0
+add|imm2 2 1 2
+je|imm1|imm2 0 0 8
+
+add|imm2 2 0 out
+add|imm2 0 0 out

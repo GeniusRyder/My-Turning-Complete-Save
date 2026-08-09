@@ -1,0 +1,11 @@
+add|imm2 in 0 0
+je|imm2 0 0 if0_true
+je|imm1|imm2 0 0 if0_false
+
+label if0_true
+pop _ _ out
+je|imm1|imm2 0 0 0
+
+label if0_false
+push 0 _ _
+je|imm1|imm2 0 0 0

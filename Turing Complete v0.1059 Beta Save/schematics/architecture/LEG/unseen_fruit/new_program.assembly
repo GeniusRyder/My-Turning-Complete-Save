@@ -1,0 +1,50 @@
+const left 0
+const right 2
+const forword 1
+const skip 3
+const interact 4
+
+add|imm1|imm2 left 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 left 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 left 0 out
+add|imm1|imm2 forword 0 out
+add|imm1|imm2 right 0 out
+add|imm1|imm2 forword 0 out
+
+#len
+add|imm1|imm2 0 0 0
+label if0
+je|imm2 in 92 if0_true
+je|imm1|imm2 0 0 if0_false
+
+label if0_true
+add|imm1|imm2 skip 0 out
+je|imm1|imm2 0 0 if0
+
+label if0_false
+#i
+add|imm1|imm2 0 0 1
+label for0
+jb 1 0 for0_true
+je|imm1|imm2 0 0 for0_false
+label for0_true
+ldr 1 _ 2
+je in 2 if1_true
+je|imm1|imm2 0 0 if1_false
+label if1_true
+add|imm1|imm2 right 0 out
+add|imm1|imm2 interact 0 out
+label if1_false
+add|imm2 1 1 1
+je|imm1|imm2 0 0 for0
+
+label for0_false
+str 0 in _
+add|imm2 0 1 0
+add|imm1|imm2 skip 0 out
+je|imm1|imm2 0 0 if0

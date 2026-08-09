@@ -1,0 +1,11 @@
+jmp 196
+in 48
+and 67
+add 68
+is_eq0 193
+out 6
+sub 69
+cp 128
+or 64
+nand 65
+nor 66
